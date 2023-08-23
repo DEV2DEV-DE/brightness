@@ -3,8 +3,8 @@ object frmMain: TfrmMain
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Helligkeit'
-  ClientHeight = 107
-  ClientWidth = 439
+  ClientHeight = 100
+  ClientWidth = 459
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -800,51 +800,100 @@ object frmMain: TfrmMain
     0000000000000000000000000000000000000000000000000000000000000000
     0000000000000000000000000000FFFFFFFFFFFF0000FFFFFFFFFFFF0000FFFF
     FFFFFFFF0000FFFFFFFFFFFF0000FFFFFFFFFFFF0000FFFFFFFFFFFF0000}
-  OldCreateOrder = False
   Position = poScreenCenter
+  OnCreate = FormCreate
   DesignSize = (
-    439
-    107)
-  PixelsPerInch = 96
+    459
+    100)
   TextHeight = 13
   object lblURL: TLabel
     Left = 16
-    Top = 48
+    Top = 50
     Width = 60
     Height = 13
     Caption = 'Datenpunkt:'
   end
-  object lblValue: TLabel
-    Left = 120
-    Top = 19
+  object lblInterval: TLabel
+    Left = 405
+    Top = 26
     Width = 6
     Height = 13
     Caption = '0'
   end
+  object Label1: TLabel
+    Left = 16
+    Top = 6
+    Width = 28
+    Height = 13
+    Caption = 'Aktiv:'
+  end
+  object Label2: TLabel
+    Left = 91
+    Top = 6
+    Width = 46
+    Height = 13
+    Caption = 'Helligkeit:'
+  end
+  object Label3: TLabel
+    Left = 360
+    Top = 6
+    Width = 44
+    Height = 13
+    Caption = 'Intervall:'
+  end
   object swActive: TToggleSwitch
     Left = 16
-    Top = 16
-    Width = 74
+    Top = 22
+    Width = 50
     Height = 20
+    ShowStateCaption = False
     TabOrder = 0
     OnClick = swActiveClick
   end
   object edtURL: TEdit
     Left = 16
-    Top = 64
-    Width = 403
+    Top = 66
+    Width = 423
     Height = 21
     Anchors = [akLeft, akTop, akRight]
-    TabOrder = 1
+    TabOrder = 3
     Text = 
       'http://192.168.178.9:8082/getPlainValue/0_userdata.0.Vis.brightn' +
       'ess'
+    ExplicitWidth = 459
+  end
+  object tbBrightness: TTrackBar
+    Left = 82
+    Top = 22
+    Width = 257
+    Height = 20
+    LineSize = 10
+    Max = 100
+    PageSize = 10
+    Position = 50
+    PositionToolTip = ptBottom
+    TabOrder = 1
+    TickStyle = tsNone
+    OnChange = tbBrightnessChange
+  end
+  object spnInterval: TUpDown
+    Left = 360
+    Top = 22
+    Width = 37
+    Height = 22
+    Min = 1
+    Max = 3600
+    Orientation = udHorizontal
+    Position = 10
+    TabOrder = 2
+    TabStop = True
+    OnChanging = spnIntervalChanging
   end
   object tmrRefresh: TTimer
     Enabled = False
     Interval = 10000
     OnTimer = tmrRefreshTimer
-    Left = 392
-    Top = 16
+    Left = 616
+    Top = 10
   end
 end
