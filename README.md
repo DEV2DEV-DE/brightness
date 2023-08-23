@@ -1,6 +1,6 @@
 # MonitorBrightness
 
-![image](https://github.com/DEV2DEV-DE/brightness/assets/95883579/a3e0bcea-59b1-49fd-a49b-1c2ee970c8cc)
+![grafik](https://github.com/DEV2DEV-DE/brightness/assets/95883579/414bf8f8-437e-4a7e-a077-78aa9882b132)
 
 Kleines Windows-Tool, das einen Wert über einen HTTP-Request abruft und damit die Helligkeit des Monitors steuert.
 
