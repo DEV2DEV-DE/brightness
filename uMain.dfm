@@ -3,8 +3,8 @@ object frmMain: TfrmMain
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Helligkeit'
-  ClientHeight = 100
-  ClientWidth = 459
+  ClientHeight = 117
+  ClientWidth = 439
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -803,8 +803,8 @@ object frmMain: TfrmMain
   Position = poScreenCenter
   OnCreate = FormCreate
   DesignSize = (
-    459
-    100)
+    439
+    117)
   TextHeight = 13
   object lblURL: TLabel
     Left = 16
@@ -853,14 +853,14 @@ object frmMain: TfrmMain
   object edtURL: TEdit
     Left = 16
     Top = 66
-    Width = 423
+    Width = 403
     Height = 21
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 3
     Text = 
       'http://192.168.178.9:8082/getPlainValue/0_userdata.0.Vis.brightn' +
       'ess'
-    ExplicitWidth = 459
+    ExplicitWidth = 397
   end
   object tbBrightness: TTrackBar
     Left = 82
@@ -888,6 +888,19 @@ object frmMain: TfrmMain
     TabOrder = 2
     TabStop = True
     OnChanging = spnIntervalChanging
+  end
+  object sbStatus: TStatusBar
+    Left = 0
+    Top = 98
+    Width = 439
+    Height = 19
+    Panels = <
+      item
+        Width = 400
+      end>
+    ExplicitLeft = 56
+    ExplicitTop = 120
+    ExplicitWidth = 0
   end
   object tmrRefresh: TTimer
     Enabled = False

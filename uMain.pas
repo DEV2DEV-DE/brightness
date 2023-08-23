@@ -19,6 +19,7 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
+    sbStatus: TStatusBar;
     procedure tmrRefreshTimer(Sender: TObject);
     procedure swActiveClick(Sender: TObject);
     procedure tbBrightnessChange(Sender: TObject);
@@ -106,6 +107,7 @@ end;
 procedure TfrmMain.tbBrightnessChange(Sender: TObject);
 begin
   SetBrightness(tmrRefresh.Interval, tbBrightness.Position);
+  sbStatus.Panels[0].Text := Format('Helligkeit: %d %', [tbBrightness.Position]);
 end;
 
 procedure TfrmMain.tmrRefreshTimer(Sender: TObject);
@@ -115,6 +117,7 @@ begin
   LValue := GetBrightnessValue(edtURL.Text);
   tbBrightness.Position := LValue;
   SetBrightness(tmrRefresh.Interval, LValue);
+  sbStatus.Panels[0].Text := FormatDateTime('hh:mm:ss', Now) + Format(' - Helligkeit: %d %', [LValue]);
 end;
 
 end.
