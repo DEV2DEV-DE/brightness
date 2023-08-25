@@ -800,11 +800,13 @@ object frmMain: TfrmMain
     0000000000000000000000000000000000000000000000000000000000000000
     0000000000000000000000000000FFFFFFFFFFFF0000FFFFFFFFFFFF0000FFFF
     FFFFFFFF0000FFFFFFFFFFFF0000FFFFFFFFFFFF0000FFFFFFFFFFFF0000}
+  OldCreateOrder = True
   Position = poScreenCenter
   OnCreate = FormCreate
   DesignSize = (
     439
     117)
+  PixelsPerInch = 96
   TextHeight = 13
   object lblURL: TLabel
     Left = 16
@@ -860,7 +862,6 @@ object frmMain: TfrmMain
     Text = 
       'http://192.168.178.9:8082/getPlainValue/0_userdata.0.Vis.brightn' +
       'ess'
-    ExplicitWidth = 397
   end
   object tbBrightness: TTrackBar
     Left = 82
@@ -898,9 +899,6 @@ object frmMain: TfrmMain
       item
         Width = 400
       end>
-    ExplicitLeft = 56
-    ExplicitTop = 120
-    ExplicitWidth = 0
   end
   object tmrRefresh: TTimer
     Enabled = False

@@ -26,6 +26,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure spnIntervalChanging(Sender: TObject; var AllowChange: Boolean);
   private
+    FLastValue: Integer;
     function GetBrightnessValue(const AUrl: string): integer;
   public
     { Public-Deklarationen }
@@ -69,6 +70,7 @@ procedure TfrmMain.FormCreate(Sender: TObject);
 var
   LInterval: Integer;
 begin
+  FLastValue := -1;
   LInterval := tmrRefresh.Interval div 1000;
   lblInterval.Caption := LInterval.ToString + ' Sek.';
 end;
@@ -116,8 +118,12 @@ var
 begin
   LValue := GetBrightnessValue(edtURL.Text);
   tbBrightness.Position := LValue;
-  SetBrightness(tmrRefresh.Interval, LValue);
-  sbStatus.Panels[0].Text := FormatDateTime('hh:mm:ss', Now) + Format(' - Helligkeit: %d %', [LValue]);
+  if LValue <> FLastValue then
+  begin
+    FLastValue := LValue;
+    SetBrightness(tmrRefresh.Interval, LValue);
+    sbStatus.Panels[0].Text := FormatDateTime('hh:mm:ss', Now) + Format(' - Helligkeit: %d %', [LValue]);
+  end;
 end;
 
 end.
