@@ -4,12 +4,12 @@ object frmMain: TfrmMain
   BorderStyle = bsDialog
   Caption = 'Helligkeit'
   ClientHeight = 117
-  ClientWidth = 439
+  ClientWidth = 460
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
-  Font.Name = 'Tahoma'
+  Font.Name = 'Segoe UI'
   Font.Style = []
   Icon.Data = {
     000001000900101010000100040028010000960000002020100001000400E802
@@ -804,19 +804,19 @@ object frmMain: TfrmMain
   Position = poScreenCenter
   OnCreate = FormCreate
   DesignSize = (
-    439
+    460
     117)
   PixelsPerInch = 96
   TextHeight = 13
   object lblURL: TLabel
     Left = 16
     Top = 50
-    Width = 60
+    Width = 65
     Height = 13
     Caption = 'Datenpunkt:'
   end
   object lblInterval: TLabel
-    Left = 405
+    Left = 397
     Top = 26
     Width = 6
     Height = 13
@@ -832,12 +832,12 @@ object frmMain: TfrmMain
   object Label2: TLabel
     Left = 91
     Top = 6
-    Width = 46
+    Width = 52
     Height = 13
     Caption = 'Helligkeit:'
   end
   object Label3: TLabel
-    Left = 360
+    Left = 352
     Top = 6
     Width = 44
     Height = 13
@@ -855,13 +855,20 @@ object frmMain: TfrmMain
   object edtURL: TEdit
     Left = 16
     Top = 66
-    Width = 403
-    Height = 21
+    Width = 424
+    Height = 25
     Anchors = [akLeft, akTop, akRight]
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 3
     Text = 
       'http://192.168.178.9:8082/getPlainValue/0_userdata.0.Vis.brightn' +
       'ess'
+    ExplicitWidth = 403
   end
   object tbBrightness: TTrackBar
     Left = 82
@@ -878,7 +885,7 @@ object frmMain: TfrmMain
     OnChange = tbBrightnessChange
   end
   object spnInterval: TUpDown
-    Left = 360
+    Left = 352
     Top = 22
     Width = 37
     Height = 22
@@ -893,12 +900,13 @@ object frmMain: TfrmMain
   object sbStatus: TStatusBar
     Left = 0
     Top = 98
-    Width = 439
+    Width = 460
     Height = 19
     Panels = <
       item
         Width = 400
       end>
+    ExplicitWidth = 439
   end
   object tmrRefresh: TTimer
     Enabled = False

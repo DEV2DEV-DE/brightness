@@ -118,11 +118,11 @@ var
   LValue: Integer;
 begin
   LValue := GetBrightnessValue(edtURL.Text);
-  tbBrightness.Position := LValue;
   if LValue <> FLastValue then
   begin
     FLastValue := LValue;
     SetBrightness(tmrRefresh.Interval, LValue);
+    tbBrightness.Position := LValue;
     sbStatus.Panels[0].Text := FormatDateTime('hh:mm:ss', Now) + Format(' - Helligkeit: %d %', [LValue]);
   end;
 end;
