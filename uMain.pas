@@ -109,6 +109,7 @@ end;
 procedure TfrmMain.tbBrightnessChange(Sender: TObject);
 begin
   SetBrightness(tmrRefresh.Interval, tbBrightness.Position);
+  FLastValue := tbBrightness.Position;
   sbStatus.Panels[0].Text := Format('Helligkeit: %d %', [tbBrightness.Position]);
 end;
 
